@@ -20,3 +20,5 @@ var ViewModel = function () {
 };
 
 ko.applyBindings(new ViewModel());
+
+//Google Map API key: AIzaSyCFRFOiufsaKBMx3jmskWF1KEiEwZCudcs
