@@ -1,0 +1,65 @@
+body {
+  font-family: 'Lora', serif;
+  background-color: #0078a6;
+  margin: 0;
+}
+h1, p {
+  color: #222;
+}
+p {
+  font-size: 20px;
+}
+ul {
+  text-align: center;
+  padding: 0;
+}
+li {
+  font-weight: bold;
+  color: #fff;
+  padding: 0 20px 0 20px;
+  display: inline-block;
+  text-decoration: none;
+}
+li:hover {
+  color: #ddd;
+  cursor: pointer;
+}
+.nicknames li {
+  color: #222;
+  margin: 15px 0 15px 0;
+}
+.container {
+  max-width: 1020px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.logo {
+  text-align: center;
+  color: #fff;
+}
+.cat-img {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+}
+.cat {
+  background-color: #eff0f1;
+  width: 300px;
+  margin: 20px auto;
+  text-align: center;
+
+  /* Rounded Corners */
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px; /* future proofing */
+  -khtml-border-radius: 10px; /* for old Konqueror browsers */
+}
+
+.edit-section {
+  padding: 20px;
+}
+
+#admin-form {
+  color: #fff;
+}
