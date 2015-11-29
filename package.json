@@ -19,5 +19,12 @@
   "bugs": {
     "url": "https://github.com/nhadinat/frontend-nanodegree-neighborhood-map/issues"
   },
-  "homepage": "https://github.com/nhadinat/frontend-nanodegree-neighborhood-map#readme"
+  "homepage": "https://github.com/nhadinat/frontend-nanodegree-neighborhood-map#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-gh-pages": "^0.5.4"
+  },
+  "dependencies": {
+    "lodash": "^3.10.1"
+  }
 }
