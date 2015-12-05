@@ -1,3 +1,11 @@
+/*
+  var markerLollicup = new google.maps.Marker({
+    position: initialLocations[i].latLng,
+    map: map,
+    title: initialLocations[i].title
+  });
+*/
+
 var Cat = function (data) {
   var self = this;
   this.clickCount = ko.observable(data.clickCount);
