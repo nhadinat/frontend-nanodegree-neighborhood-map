@@ -39,24 +39,28 @@ li:hover {
   cursor: pointer;
 }
 
+/* Sidebar Input Field and Results */
 .sidebar {
   background: #fbfbfb;
   position: absolute;
   width: 250px;
   height: 100%;
-  left: 0;
+  left: 200px;
   top: 0;
   z-index: 1;
   padding: 15px;
 }
-
-.sidebar li {
-  color: inherit;
+#filter-btn {
   margin: 3px;
   padding: 3px 7px;
-  text-decoration: none;
   border: 1px solid transparent;
   border-radius: 3px;
+}
+#filter-btn:hover {
+  background-color: #cccccc;
+}
+#filter-btn:active {
+  background-color: #aaaaaa;
 }
 
 /*
