@@ -12,7 +12,8 @@ function initMap() {
   // Center map on location and zoom to 18th degree
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 33.688428, lng: -117.833741},
-    zoom: 18
+    zoom: 18,
+    mapTypeId: google.maps.MapTypeId.HYBRID
   });
 
   var markerLollicup = new google.maps.Marker({

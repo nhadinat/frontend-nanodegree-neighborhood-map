@@ -1,10 +1,9 @@
-/*  */
+/* Google Map */
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
 }
-
 #map { height: 100%; }
 
 body {
@@ -39,6 +38,30 @@ li:hover {
   cursor: pointer;
 }
 
+/* Header and sidebar button */
+.header {
+  background: #4e4e4e;
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  padding: 5px 0;
+}
+#sidebar-btn {
+  margin: 3px;
+  padding: 3px 7px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+}
+#sidebar-btn:hover {
+  background-color: #cccccc;
+}
+#sidebar-btn:active {
+  background-color: #aaaaaa;
+}
+
 /* Sidebar Input Field and Results */
 .sidebar {
   background: #fbfbfb;
@@ -48,7 +71,7 @@ li:hover {
   left: 200px;
   top: 0;
   z-index: 1;
-  padding: 15px;
+  padding: 0 15px;
 }
 #filter-btn {
   margin: 3px;
