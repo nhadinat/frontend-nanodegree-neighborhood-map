@@ -4,7 +4,9 @@ html, body {
   margin: 0;
   padding: 0;
 }
-#map { height: 100%; }
+#map {
+  height: 95%;
+}
 
 body {
   font-family: 'Lora', serif;
@@ -41,13 +43,12 @@ li:hover {
 /* Header and sidebar button */
 .header {
   background: #fbfbfb;
-  position: absolute;
-  width: 70px;
-  height: 40px;
-  left: 280px;
+  position: relative;
+  width: 100%;
+  height: 5%;
+  left: 0;
   top: 0;
-  z-index: 2;
-  padding: 5px 0;
+  z-index: 1;
 }
 #sidebar-btn {
   margin: 3px;
@@ -64,6 +65,7 @@ li:hover {
 
 /* Sidebar Input Field and Results */
 .sidebar {
+  display: none;
   background: #fbfbfb;
   position: absolute;
   width: 250px;

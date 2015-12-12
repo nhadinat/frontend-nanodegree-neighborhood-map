@@ -10,21 +10,24 @@
   </head>
 
   <body>
-    <div id="map"></div>
 
     <!-- Implement input text area to filter your map markers displayed in step 4. The input text area should filter on markers that already show up. Simply providing a search function through a third-party API and displaying the results is not enough. -->
 
-    <!-- double check if the right map, and also add top bar -->
+    <!-- Add top header bar, add search function to it -->
 
     <div class="header">
+      <input id="" type="text" name="filter-field" value="Search">
+      <!-- Extra buttons
+      <input id="filter-btn" type="submit" value="Filter" onclick="">
       <input id="sidebar-btn" type="submit" value="Sidebar" onclick="">
+      -->
     </div>
 
     <div class="sidebar">
-      <h1>Input Text Area</h1>
-      <input id="" type="text" name="filter-field" value="">
-      <input id="filter-btn" type="submit" value="Filter" onclick="">
+      <h1>View Search Results</h1>
     </div>
+
+    <div id="map"></div>
 
     <script src="js/app.js"></script>
     <script async defer
