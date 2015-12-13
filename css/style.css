@@ -1,4 +1,4 @@
-/* Google Map */
+/* Google Map Styles */
 html, body {
   height: 100%;
   margin: 0;
@@ -8,16 +8,23 @@ html, body {
   height: 95%;
 }
 
+/* Theme */
 body {
   font-family: 'Lora', serif;
   background-color: #0078a6;
-  margin: 0;
+  color: #222;
 }
 
-/* Text */
+/* Standardize Text */
 h1, h2, h3, h4, p {
-  color: #222;
-  margin: 15px 0;
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  font-size: 26px;
+}
+h2 {
+  font-size: 22px;
 }
 p {
   font-size: 16px;
@@ -40,16 +47,14 @@ li:hover {
   cursor: pointer;
 }
 
-/* Header and sidebar button */
+/* Header */
 .header {
   background: #fbfbfb;
-  position: relative;
   width: 100%;
   height: 5%;
-  left: 0;
-  top: 0;
-  z-index: 1;
 }
+
+/* sidebar button
 #sidebar-btn {
   margin: 3px;
   padding: 3px 7px;
@@ -62,18 +67,12 @@ li:hover {
 #sidebar-btn:active {
   background-color: #aaaaaa;
 }
+*/
 
-/* Sidebar Input Field and Results */
-.sidebar {
-  display: none;
+/* List in the Sidebar */
+.list {
   background: #fbfbfb;
-  position: absolute;
-  width: 250px;
-  height: 100%;
-  left: 0;
-  top: 0;
-  z-index: 1;
-  padding: 0 15px;
+  width: 100%;
 }
 #filter-btn {
   margin: 3px;

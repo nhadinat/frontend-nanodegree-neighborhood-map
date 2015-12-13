@@ -2,19 +2,19 @@
 var map;
 function initMap() {
 
-  // Locations, to be in collection
-  var lollicup = {lat: 33.6879372, lng:-117.8341776};
-  var tokyoTable = {lat: 33.687387, lng:-117.833752};
-  var theKickingCrab = {lat: 33.688507, lng:-117.832728};
-  var balconyGrillBar = {lat: 33.687824, lng:-117.834221};
-  var ajisenRamen = {lat: 33.688856, lng:-117.833937};
-
   // Center map on location and zoom to 18th degree
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 33.688428, lng: -117.833741},
     zoom: 18,
     mapTypeId: google.maps.MapTypeId.HYBRID
   });
+
+  // Locations, to be in collection
+  var lollicup = {lat: 33.6879372, lng:-117.8341776};
+  var tokyoTable = {lat: 33.687387, lng:-117.833752};
+  var theKickingCrab = {lat: 33.688507, lng:-117.832728};
+  var balconyGrillBar = {lat: 33.687824, lng:-117.834221};
+  var ajisenRamen = {lat: 33.688856, lng:-117.833937};
 
   var markerLollicup = new google.maps.Marker({
     position: lollicup,

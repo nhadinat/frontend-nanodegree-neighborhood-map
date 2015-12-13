@@ -12,23 +12,27 @@
   <body>
 
     <!-- Implement input text area to filter your map markers displayed in step 4. The input text area should filter on markers that already show up. Simply providing a search function through a third-party API and displaying the results is not enough. -->
+    <!-- Start by setting up knockout environment -->
 
     <!-- Add top header bar, add search function to it -->
 
     <div class="header">
-      <input id="" type="text" name="filter-field" value="Search">
+      <span>
+        Search <input id="" type="text" name="filter-field" value="">
+      </span>
       <!-- Extra buttons
       <input id="filter-btn" type="submit" value="Filter" onclick="">
       <input id="sidebar-btn" type="submit" value="Sidebar" onclick="">
       -->
     </div>
 
-    <div class="sidebar">
+    <div class="list">
       <h1>View Search Results</h1>
     </div>
 
     <div id="map"></div>
 
+    <script src="js/libs/knockout-3.4.0.js"></script>
     <script src="js/app.js"></script>
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFRFOiufsaKBMx3jmskWF1KEiEwZCudcs&callback=initMap">
