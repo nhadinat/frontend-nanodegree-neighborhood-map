@@ -5,9 +5,10 @@ var ViewModel = function () {
   var self = this;
 
   // Declare and initiate the fullscreen Google map
-  this.initMap = function initMap() {
+  var map;
+  function initMap() {
     // Center map on location and zoom to 18th degree
-    var map = new google.maps.Map(document.getElementById('map'), {
+    map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: 33.688428, lng: -117.833741},
       zoom: 18,
       mapTypeId: google.maps.MapTypeId.HYBRID
