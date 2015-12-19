@@ -20,6 +20,7 @@ function initialize() {
   service.textSearch(request, callback);
 }
 
+// Create markers upon map done
 function callback(results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
     for (var i = 0; i < results.length; i++) {
@@ -28,3 +29,6 @@ function callback(results, status) {
     }
   }
 }
+
+// Place this in the ViewModel
+initialize();
