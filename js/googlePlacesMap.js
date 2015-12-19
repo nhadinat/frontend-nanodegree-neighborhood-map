@@ -29,6 +29,3 @@ function callback(results, status) {
     }
   }
 }
-
-// Place this in the ViewModel
-initialize();
