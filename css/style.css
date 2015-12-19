@@ -5,7 +5,7 @@ html, body {
   padding: 0;
 }
 #map {
-  height: 95%;
+  height: 100%;
 }
 
 /* Theme */
@@ -15,7 +15,7 @@ body {
   color: #222;
 }
 
-/* Standardize Text */
+/* Normalize */
 h1, h2, h3, h4, p {
   margin: 0;
   padding: 0;
@@ -31,46 +31,33 @@ p {
 }
 
 /* Lists */
-ul {
-  text-align: center;
+ul.results-list {
   padding: 0;
 }
-li {
+ul.results-list > li {
   font-weight: bold;
-  color: #fff;
-  padding: 0 20px 0 20px;
-  display: inline-block;
+  padding: 10px;
   text-decoration: none;
 }
-li:hover {
+ul.results-list > li:hover {
   color: #ddd;
   cursor: pointer;
+}
+ul.results-list > li:active {
+  color: #ddd;
 }
 
 /* Header */
 .header {
+  display: none;
   background: #fbfbfb;
   width: 100%;
   height: 5%;
 }
 
-/* sidebar button
-#sidebar-btn {
-  margin: 3px;
-  padding: 3px 7px;
-  border: 1px solid transparent;
-  border-radius: 3px;
-}
-#sidebar-btn:hover {
-  background-color: #cccccc;
-}
-#sidebar-btn:active {
-  background-color: #aaaaaa;
-}
-*/
-
-/* List in the Sidebar */
-.list {
+/* List results */
+.results {
+  display: none;
   background: #fbfbfb;
   width: 100%;
 }
@@ -86,32 +73,3 @@ li:hover {
 #filter-btn:active {
   background-color: #aaaaaa;
 }
-
-/*
-.nicknames li {
-  color: #222;
-  margin: 15px 0 15px 0;
-}
-.container {
-  max-width: 1020px;
-  margin-right: auto;
-  margin-left: auto;
-}
-.logo {
-  text-align: center;
-  color: #fff;
-}
-.cat-img {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  cursor: pointer;
-}
-.cat {
-  background-color: #eff0f1;
-  width: 300px;
-  margin: 20px auto;
-  text-align: center;
-  border-radius: 10px;
-}
-*/

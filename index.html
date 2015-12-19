@@ -2,8 +2,8 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Diamond Jamboree Interactive Map, Nate's Fab 5</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>Nate's Interactive Map</title>
 
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/style.css">
@@ -22,12 +22,16 @@
       </span>
       <!-- Extra buttons
       <input id="filter-btn" type="submit" value="Filter" onclick="">
-      <input id="sidebar-btn" type="submit" value="Sidebar" onclick="">
       -->
     </div>
 
-    <div class="list">
-      <h1>View Search Results</h1>
+    <div class="results">
+      <ul class="results-list">
+        <li>1 Lollicup</li>
+        <li>2 Balcony Grill and Bar</li>
+        <li>3 Tokyo Table</li>
+        <li>4 Ajisen Ramen</li>
+      </ul>
     </div>
 
     <div id="map"></div>
@@ -35,10 +39,12 @@
     <script src="js/libs/knockout-3.4.0.js"></script>
     <script src="js/collection.js"></script>
     <script src="js/model.js"></script>
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFRFOiufsaKBMx3jmskWF1KEiEwZCudcs&libraries=places"></script>
     <script src="js/googlePlacesMap.js"></script>
-    <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFRFOiufsaKBMx3jmskWF1KEiEwZCudcs&callback=initMap">
-    </script>
+    <!--
+    <script src="js/gPlacesMapAC.js"></script>
+    -->
 
   </body>
 </html>
