@@ -6,13 +6,13 @@ html, body {
 }
 #map {
   display: flex;
-  height: 95%;
+  height: 100%;
   width: 100%;
 }
 
 /* Theme */
 body {
-  font-family: 'Lora', serif;
+  font-family: 'Roboto', Arial, sans-serif;
   background-color: #0078a6;
   color: #222;
 }
@@ -23,13 +23,13 @@ h1, h2, h3, h4, p {
   padding: 0;
 }
 h1 {
-  font-size: 26px;
-}
-h2 {
   font-size: 22px;
 }
-p {
+h2 {
   font-size: 16px;
+}
+p {
+  font-size: 11px;
 }
 
 /* Lists */
@@ -37,32 +37,34 @@ ul.results-list {
   padding: 0;
 }
 ul.results-list > li {
-  font-weight: bold;
   padding: 10px;
   text-decoration: none;
 }
 ul.results-list > li:hover {
-  color: #ddd;
+  color: #777;
   cursor: pointer;
 }
 ul.results-list > li:active {
-  color: #ddd;
+  color: #777;
 }
 
-/* Header */
+/* Header
 .header {
   display: flex;
   background: #fbfbfb;
   width: 100%;
   height: 5%;
 }
+*/
+
+/* List Sidebar and Results */
 p.search {
   margin-left: 10px;
-  margin-top: 6px;
+  margin-top: 10px;
 }
 #search-field {
   border-radius: 3px;
-  width: 300px;
+  margin-bottom: 10px;
 }
 #search-btn {
   margin: 3px;
@@ -71,19 +73,20 @@ p.search {
   border-radius: 3px;
 }
 #search-btn:hover {
-  background-color: #cccccc;
+  background-color: #ccc;
 }
 #search-btn:active {
-  background-color: #aaaaaa;
+  background-color: #aaa;
 }
 
-/* List results */
 .results {
   position: absolute;
-  background: #fbfbfb;
+  background: rgba(255, 255, 255, 0.9);;
   left: 10px;
-  top: 81px;
+  top: 49px;
   width: 200px;
-  height: 82%;
+  height: 87%;
   z-index: 999;
+    box-shadow: 0.5px 0.5px 1px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
 }

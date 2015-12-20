@@ -7,7 +7,8 @@ function initialize() {
 
   map = new google.maps.Map(document.getElementById('map'), {
     center: lollicup,
-    zoom: 15
+    zoom: 18,
+    mapTypeId: google.maps.MapTypeId.HYBRID
   });
 
   var request = {
