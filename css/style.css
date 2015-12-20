@@ -53,17 +53,23 @@ div.results {
   border-radius: 2px;
   border: 1px solid #ccc;
   width: 99%;
-  height: 28px;
+  height: 32px;
   padding: 0;
   margin: 0;
   font-size: 16px;
 }
+  @media screen and (min-width: 500px) {
+  #search-field {
+      height: 28px;
+    }
+  }
 div.results ul {
   padding: 0;
 }
 div.results ul li {
-  padding: 10px;
+  padding: 5px 10px;
   list-style: none;
+  font-size: 14px;
 }
 div.results ul li:hover {
   color: #777;

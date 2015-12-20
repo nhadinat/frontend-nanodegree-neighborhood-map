@@ -1,26 +1,26 @@
-var initialLocations = [
+var initialResults = [
   {
-    title: 'Lollicup',
+    name: 'Lollicup',
     marker: 'markerLollicup',
     latLng: {lat: 33.6879372, lng:-117.8341776}
   },
   {
-    title: 'Tokyo Table',
+    name: 'Tokyo Table',
     marker: 'markerTokyoTable',
     latLng: {lat: 33.687387, lng:-117.833752}
   },
   {
-    title: 'The Kicking Crab',
+    name: 'The Kicking Crab',
     marker: 'markerTheKickinCrab',
     latLng: {lat: 33.688507, lng:-117.832728}
   },
   {
-    title: 'Balcony Grill & Bar',
+    name: 'Balcony Grill & Bar',
     marker: 'markerBalconyGrillBar',
     latLng: {lat: 33.687824, lng:-117.834221}
   },
   {
-    title: 'Ajisen Ramen',
+    name: 'Ajisen Ramen',
     marker: 'markerAjisenRamen',
     latLng: {lat: 33.688856, lng:-117.833937}
   }

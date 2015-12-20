@@ -18,13 +18,8 @@
 
       <div class="results">
           <input id="search-field" type="text" name="search-field" placeholder="Search">
-        <ul data-bind="foreach: locations">
-          <li data-bind="text: $data"></li>
-        </ul>
-        <ul>
-          <li>Hardcodes</li>
-          <li>3 Tokyo Table</li>
-          <li>4 Ajisen Ramen</li>
+        <ul data-bind="foreach: resultsList">
+            <li data-bind="text: name"></li>
         </ul>
       </div>
 
