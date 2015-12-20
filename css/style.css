@@ -39,7 +39,6 @@ div.results {
   left: 120px;
   top: 10px;
   width: 200px;
-  height: 87%;
   z-index: 999;
     box-shadow: 0.5px 0.5px 1px 1px rgba(0, 0, 0, 0.1);
     border-radius: 2px;
@@ -51,16 +50,17 @@ div.results {
   }
 #search-field {
   border-radius: 2px;
-  border: 1px solid #ccc;
-  width: 99%;
-  height: 32px;
-  padding: 0;
+  border: 0px solid #ccc;
+  width: 191px;
+  height: 33px;
+  padding: 0 0 0 9px;
   margin: 0;
   font-size: 16px;
+  box-shadow: 0.5px 0.5px 1px 1px rgba(0, 0, 0, 0.1);
 }
   @media screen and (min-width: 500px) {
   #search-field {
-      height: 28px;
+      height: 29px;
     }
   }
 div.results ul {

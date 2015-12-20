@@ -1,4 +1,4 @@
-// MODEL: Location Class
+// MODEL: Search Results Class
 var Results = function (data) {
   var self = this;
 
