@@ -3,7 +3,9 @@
 
 var ViewModel = function () {
   var self = this;
+  initialize();
 
+  /* Old Map
   // Declare and initiate the fullscreen Google map
   var map;
   function initMap() {
@@ -16,7 +18,7 @@ var ViewModel = function () {
 
     // For each Location in the collection,
     // create markers as observables
-    /*
+
     this.locList = ko.observableArray([]);
 
     initialLocs.forEach(function(locItem){
@@ -32,9 +34,8 @@ var ViewModel = function () {
       map: map,
       title: self.title
     });
-    */
   }
-
+  */
 };
 
 ko.applyBindings(new ViewModel());

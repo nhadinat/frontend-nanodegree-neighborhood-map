@@ -17,24 +17,25 @@
     <!-- Add top header bar, add search function to it -->
 
     <div class="header">
-      <span>
-        Search <input id="" type="text" name="filter-field" value="">
-      </span>
+      <p class="search">
+        <label for="search-field">Search</label>
+        <input id="search-field" type="text" name="search-field" value="">
+      </p>
       <!-- Extra buttons
       <input id="filter-btn" type="submit" value="Filter" onclick="">
       -->
     </div>
 
-    <div class="results">
-      <ul class="results-list">
-        <li>1 Lollicup</li>
-        <li>2 Balcony Grill and Bar</li>
-        <li>3 Tokyo Table</li>
-        <li>4 Ajisen Ramen</li>
-      </ul>
-    </div>
+      <div class="results">
+        <ul class="results-list">
+          <li>1 Lollicup</li>
+          <li>2 Balcony Grill and Bar</li>
+          <li>3 Tokyo Table</li>
+          <li>4 Ajisen Ramen</li>
+        </ul>
+      </div>
 
-    <div id="map"></div>
+      <div id="map"></div>
 
     <script src="js/libs/knockout-3.4.0.js"></script>
     <script src="js/collection.js"></script>
@@ -46,5 +47,6 @@
     <script src="js/gPlacesMapAC.js"></script>
     -->
 
+    <script src="js/viewModel.js"></script>
   </body>
 </html>
