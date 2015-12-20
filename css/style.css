@@ -36,7 +36,7 @@ p {
 div.results {
   position: absolute;
   background: rgba(255, 255, 255, 0.9);;
-  left: 113px;
+  left: 120px;
   top: 10px;
   width: 200px;
   height: 87%;
@@ -46,7 +46,7 @@ div.results {
 }
   @media screen and (min-width: 500px) {
     div.results {
-      left: 116px;
+      left: 113px;
     }
   }
 #search-field {
