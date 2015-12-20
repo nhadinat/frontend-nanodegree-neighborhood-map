@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>Nate's Interactive Map</title>
 
-    <link href='https://fonts.googleapis.com/css?family=Lora:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/style.css">
   </head>
 
@@ -16,23 +16,19 @@
 
     <!-- Add top header bar, add search function to it -->
 
-    <div class="header">
-      <p class="search">
-        <label for="search-field">Search</label>
-        <input id="search-field" type="text" name="search-field" value="">
-      </p>
-      <!-- Extra buttons
-      <input id="filter-btn" type="submit" value="Filter" onclick="">
-      -->
-    </div>
-
       <div class="results">
-        <ul class="results-list">
-          <li>1 Lollicup</li>
-          <li>2 Balcony Grill and Bar</li>
-          <li>3 Tokyo Table</li>
-          <li>4 Ajisen Ramen</li>
-        </ul>
+        <p class="search">
+          <label for="search-field">Search</label>
+          <input id="search-field" type="text" name="search-field" value="">
+        </p>
+        <p>
+          <ul class="results-list">
+            <li>1 Lollicup</li>
+            <li>2 Balcony Grill and Bar</li>
+            <li>3 Tokyo Table</li>
+            <li>4 Ajisen Ramen</li>
+          </ul>
+        </p>
       </div>
 
       <div id="map"></div>
