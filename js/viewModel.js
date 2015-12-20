@@ -5,6 +5,7 @@ var ViewModel = function () {
   var self = this;
   initialize();
 
+
   /* Old Map
   // Declare and initiate the fullscreen Google map
   var map;

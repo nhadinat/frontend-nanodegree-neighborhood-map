@@ -17,18 +17,15 @@
     <!-- Add top header bar, add search function to it -->
 
       <div class="results">
-        <p class="search">
-          <label for="search-field">Search</label>
-          <input id="search-field" type="text" name="search-field" value="">
-        </p>
-        <p>
-          <ul class="results-list">
-            <li>1 Lollicup</li>
-            <li>2 Balcony Grill and Bar</li>
-            <li>3 Tokyo Table</li>
-            <li>4 Ajisen Ramen</li>
-          </ul>
-        </p>
+          <input id="search-field" type="text" name="search-field" placeholder="Search">
+        <ul data-bind="foreach: locations">
+          <li data-bind="text: $data"></li>
+        </ul>
+        <ul>
+          <li>Hardcodes</li>
+          <li>3 Tokyo Table</li>
+          <li>4 Ajisen Ramen</li>
+        </ul>
       </div>
 
       <div id="map"></div>
