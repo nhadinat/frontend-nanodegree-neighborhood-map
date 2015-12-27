@@ -14,15 +14,17 @@
     <!-- Implement input text area to filter your map markers displayed in step 4. The input text area should filter on markers that already show up. Simply providing a search function through a third-party API and displaying the results is not enough. -->
     <!-- Start by setting up knockout environment -->
 
-    <!-- Add top header bar, add search function to it -->
 
+    <!-- Search function -->
       <div class="results">
-          <input id="search-field" type="text" name="search-field" placeholder="Search">
+          <input id="search-field" type="text" class="controls" placeholder="Search">
         <ul data-bind="foreach: resultsList">
             <li data-bind="text: name"></li>
         </ul>
       </div>
 
+
+    <!-- Google Places Map -->
       <div id="map"></div>
 
     <script src="js/libs/knockout-3.4.0.js"></script>
