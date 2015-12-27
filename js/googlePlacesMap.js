@@ -2,8 +2,10 @@ var map;
 var infowindow;
 
 function initialize() {
+  // Store location where I'll center the map
   var lollicup = new google.maps.LatLng(33.6879372, -117.8341776);
 
+  // Create the map, set to Hybrid view
   map = new google.maps.Map(document.getElementById('map'), {
     center: lollicup,
     zoom: 18,
@@ -35,6 +37,7 @@ function callback(results, status) {
 function createMarker(place) {
   // Store place geolocation
   var placeLoc = place.geometry.location;
+  console.dir(place);
   var marker = new google.maps.Marker({
     map: map,
     position: placeLoc
@@ -42,7 +45,7 @@ function createMarker(place) {
 
   // Infowindow on click
   google.maps.event.addListener(marker, 'click', function() {
-    infowindow.setContent(place.name);
+    infowindow.setContent(place.name + ', ♥: ' + place.rating + '/5');
     infowindow.open(map, this);
   });
 }
