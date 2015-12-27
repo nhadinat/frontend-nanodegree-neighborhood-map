@@ -1,5 +1,4 @@
 var map;
-var service;
 var infowindow;
 
 function initialize() {
@@ -11,22 +10,33 @@ function initialize() {
     mapTypeId: google.maps.MapTypeId.HYBRID
   });
 
-  var request = {
-    location: lollicup,
-    radius: '500',
-    query: 'restaurant'
-  };
+  infowindow = new google.maps.InfoWindow();
 
-  service = new google.maps.places.PlacesService(map);
-  service.textSearch(request, callback);
+  var service = new google.maps.places.PlacesService(map);
+  service.nearbySearch({
+    location: lollicup,
+    radius: 250,
+    types: ['restaurant']
+  }, callback);
 }
 
-// Create markers upon map done
 function callback(results, status) {
-  if (status == google.maps.places.PlacesServiceStatus.OK) {
+  if (status === google.maps.places.PlacesServiceStatus.OK) {
     for (var i = 0; i < results.length; i++) {
-      var place = results[i];
       createMarker(results[i]);
     }
   }
+}
+
+function createMarker(place) {
+  var placeLoc = place.geometry.location;
+  var marker = new google.maps.Marker({
+    map: map,
+    position: place.geometry.location
+  });
+
+  google.maps.event.addListener(marker, 'click', function() {
+    infowindow.setContent(place.name);
+    infowindow.open(map, this);
+  });
 }
