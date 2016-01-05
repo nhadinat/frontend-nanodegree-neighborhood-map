@@ -48,7 +48,7 @@ div.results {
       left: 113px;
     }
   }
-#search-field {
+.controls {
   border-radius: 2px;
   border: 0px solid #ccc;
   width: 191px;
@@ -59,7 +59,7 @@ div.results {
   box-shadow: 0.5px 0.5px 1px 1px rgba(0, 0, 0, 0.1);
 }
   @media screen and (min-width: 500px) {
-  #search-field {
+  .controls {
       height: 29px;
     }
   }
