@@ -22,60 +22,17 @@ function initialize() {
     radius: 250,
     types: ['restaurant']
   }, callback);
-}
-
-// Create markers based on the PlacesService search data collection
-function callback(results, status) {
-  if (status === google.maps.places.PlacesServiceStatus.OK) {
-    for (var i = 0; i < results.length; i++) {
-      createMarker(results[i]);
-    }
-  }
-}
-
-// Marker model
-function createMarker(place) {
-  // Store place geolocation
-  var placeLoc = place.geometry.location;
-  var marker = new google.maps.Marker({
-    map: map,
-    position: placeLoc
-  });
-
-  // Infowindow on click
-  google.maps.event.addListener(marker, 'click', function() {
-    infowindow.setContent(place.name + ', ♥: ' + place.rating + '/5');
-    infowindow.open(map, this);
-  });
-}
-
-/*
-// Autocomplete bounds
-var defaultBounds = new google.maps.LatLngBounds(
-  new google.maps.LatLng(33.687422, -117.835076),
-  new google.maps.LatLng(33.689502, -117.832276)
-);
-
-// Get the input for the autocomplete search box
-var input = document.getElementById('search-field');
-
-// Construct searchBox
-var searchBox = new google.maps.places.SearchBox(input, {
-  bounds: defaultBounds,
-  types: ['restaurants']
-});
-*/
 
 
-
-
-// This example adds a search box to a map, using the Google Place Autocomplete
-// feature. People can enter geographical searches. The search box will return a
-// pick list containing a mix of places and predicted search terms.
+  // This example adds a search box to a map, using the Google Place Autocomplete
+  // feature. People can enter geographical searches. The search box will return a
+  // pick list containing a mix of places and predicted search terms.
 
   // Create the search box and link it to the UI element.
-  var input = document.getElementById('search-field');
+  var input = /** @type {HTMLInputElement} */(
+      document.getElementById('pac-input'));
   var searchBox = new google.maps.places.SearchBox(input);
+  // ERR: Uncaught TypeError: Cannot read property 'controls' of undefined
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
   // Bias the SearchBox results towards current map's viewport.
@@ -129,3 +86,46 @@ var searchBox = new google.maps.places.SearchBox(input, {
     map.fitBounds(bounds);
   });
   // [END region_getplaces]
+}
+
+// Create markers based on the PlacesService search data collection
+function callback(results, status) {
+  if (status === google.maps.places.PlacesServiceStatus.OK) {
+    for (var i = 0; i < results.length; i++) {
+      createMarker(results[i]);
+    }
+  }
+}
+
+// Marker model
+function createMarker(place) {
+  // Store place geolocation
+  var placeLoc = place.geometry.location;
+  var marker = new google.maps.Marker({
+    map: map,
+    position: placeLoc
+  });
+
+  // Infowindow on click
+  google.maps.event.addListener(marker, 'click', function() {
+    infowindow.setContent(place.name + ', ♥: ' + place.rating + '/5');
+    infowindow.open(map, this);
+  });
+}
+
+/*
+// Autocomplete bounds
+var defaultBounds = new google.maps.LatLngBounds(
+  new google.maps.LatLng(33.687422, -117.835076),
+  new google.maps.LatLng(33.689502, -117.832276)
+);
+
+// Get the input for the autocomplete search box
+var input = document.getElementById('pac-input');
+
+// Construct searchBox
+var searchBox = new google.maps.places.SearchBox(input, {
+  bounds: defaultBounds,
+  types: ['restaurants']
+});
+*/
