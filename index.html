@@ -12,14 +12,9 @@
   <body>
 
     <!-- Implement input text area to filter your map markers displayed in step 4. The input text area should filter on markers that already show up. Simply providing a search function through a third-party API and displaying the results is not enough. -->
-    <!-- Start by setting up knockout environment -->
-
 
     <!-- Search function -->
-      <div class="results">
-          <input id="search-field" size="50" type="text" class="controls" placeholder="Search">
-      </div>
-
+      <input id="pac-input" type="text" class="controls" placeholder="Enter a location">
 
     <!-- Google Places Map -->
       <div id="map"></div>
@@ -33,7 +28,7 @@
     <!--
     <script src="js/gPlacesMapAC.js"></script>
     -->
-
     <script src="js/viewModel.js"></script>
+
   </body>
 </html>
