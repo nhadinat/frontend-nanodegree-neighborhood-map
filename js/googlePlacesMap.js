@@ -76,6 +76,7 @@ var searchBox = new google.maps.places.SearchBox(input, {
   // Create the search box and link it to the UI element.
   var input = document.getElementById('search-field');
   var searchBox = new google.maps.places.SearchBox(input);
+  // ERR: Uncaught TypeError: Cannot read property 'controls' of undefined
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
   // Bias the SearchBox results towards current map's viewport.
