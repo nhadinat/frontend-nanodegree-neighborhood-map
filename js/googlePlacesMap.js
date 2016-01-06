@@ -32,7 +32,6 @@ function initialize() {
   var input = /** @type {HTMLInputElement} */(
       document.getElementById('pac-input'));
   var searchBox = new google.maps.places.SearchBox(input);
-  // ERR: Uncaught TypeError: Cannot read property 'controls' of undefined
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
   // Bias the SearchBox results towards current map's viewport.
