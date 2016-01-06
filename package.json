@@ -1,8 +1,13 @@
 {
   "name": "frontend-nanodegree-neighborhood-map",
   "version": "1.0.0",
-  "description": "Udacity project 5, neighborhood map",
+  "description": "neighborhood map",
   "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-gh-pages": "^0.5.4"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,12 +24,5 @@
   "bugs": {
     "url": "https://github.com/nhadinat/frontend-nanodegree-neighborhood-map/issues"
   },
-  "homepage": "https://github.com/nhadinat/frontend-nanodegree-neighborhood-map#readme",
-  "devDependencies": {
-    "gulp": "^3.9.0",
-    "gulp-gh-pages": "^0.5.4"
-  },
-  "dependencies": {
-    "lodash": "^3.10.1"
-  }
+  "homepage": "https://github.com/nhadinat/frontend-nanodegree-neighborhood-map#readme"
 }
