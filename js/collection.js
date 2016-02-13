@@ -1,3 +1,5 @@
+// TODO: make initialResults = [someSortaListCollection]
+
 var initialResults = [
   {
     name: 'Lollicup',

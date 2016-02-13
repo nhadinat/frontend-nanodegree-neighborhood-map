@@ -33,6 +33,17 @@ p {
 }
 
 /* Search Results List Sidebar */
+.controls {
+  border-radius: 2px;
+  border: 0px solid #ccc;
+  width: 191px;
+  height: 33px;
+  padding: 0 0 0 9px;
+  margin: 0;
+  font-size: 16px;
+  box-shadow: 0.5px 0.5px 1px 1px rgba(0, 0, 0, 0.1);
+}
+/*
 div.results {
   position: absolute;
   background: rgba(255, 255, 255, 0.9);
@@ -48,16 +59,6 @@ div.results {
       left: 113px;
     }
   }
-.controls {
-  border-radius: 2px;
-  border: 0px solid #ccc;
-  width: 191px;
-  height: 33px;
-  padding: 0 0 0 9px;
-  margin: 0;
-  font-size: 16px;
-  box-shadow: 0.5px 0.5px 1px 1px rgba(0, 0, 0, 0.1);
-}
   @media screen and (min-width: 500px) {
   .controls {
       height: 29px;
@@ -78,6 +79,7 @@ div.results ul li:hover {
 div.results ul li:active {
   color: #777;
 }
+*/
 
 /*
 #search-btn {

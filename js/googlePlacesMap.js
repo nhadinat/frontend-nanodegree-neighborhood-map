@@ -1,5 +1,5 @@
-var map;
-var infowindow;
+var map; // google map constructor
+var infowindow; // google marker's pop-up infowindow constructor
 
 function initialize() {
   // Store location where I'll center the map
@@ -28,12 +28,15 @@ function initialize() {
   // feature. People can enter geographical searches. The search box will return a
   // pick list containing a mix of places and predicted search terms.
 
+  // HOWEVER, for my purpose, I will want to have this filter a select list > collection.js
+
   // Create the search box and link it to the UI element.
-  var input = /** @type {HTMLInputElement} */(
-      document.getElementById('pac-input'));
+  var input = /** @type {HTMLInputElement} */(document.getElementById('pac-input'));
   var searchBox = new google.maps.places.SearchBox(input);
-  // ERR: Uncaught TypeError: Cannot read property 'controls' of undefined
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+  // Style input to blend with the rest of the google map controls
+  input.style.margin = "10px 0 0 0";
+  input.style.height = "29px";
 
   // Bias the SearchBox results towards current map's viewport.
   map.addListener('bounds_changed', function() {
