@@ -32,18 +32,7 @@ p {
   font-size: 11px;
 }
 
-/* Search Results List Sidebar */
-.controls {
-  border-radius: 2px;
-  border: 0px solid #ccc;
-  width: 191px;
-  height: 33px;
-  padding: 0 0 0 9px;
-  margin: 0;
-  font-size: 16px;
-  box-shadow: 0.5px 0.5px 1px 1px rgba(0, 0, 0, 0.1);
-}
-/*
+/* Results Section */
 div.results {
   position: absolute;
   background: rgba(255, 255, 255, 0.9);
@@ -79,19 +68,15 @@ div.results ul li:hover {
 div.results ul li:active {
   color: #777;
 }
-*/
 
-/*
-#search-btn {
-  margin: 3px;
-  padding: 3px 7px;
-  border: 1px solid transparent;
-  border-radius: 3px;
+/* Filter Bar */
+#filterBar {
+  border-radius: 2px;
+  border: 0px solid #ccc;
+  width: 191px;
+  height: 33px;
+  padding: 0 0 0 9px;
+  margin: 0;
+  font-size: 16px;
+  box-shadow: 0.5px 0.5px 1px 1px rgba(0, 0, 0, 0.1);
 }
-#search-btn:hover {
-  background-color: #ccc;
-}
-#search-btn:active {
-  background-color: #aaa;
-}
-*/

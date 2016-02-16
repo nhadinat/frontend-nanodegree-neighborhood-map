@@ -14,7 +14,12 @@
     <!-- Implement input text area to filter your map markers displayed in step 4. The input text area should filter on markers that already show up. Simply providing a search function through a third-party API and displaying the results is not enough. -->
 
     <!-- Search function -->
-      <input id="pac-input" type="text" class="controls" placeholder="Enter a location">
+    <div class="results">
+        <input id="filterBar" type="text" name="filterBar" placeholder="Filter Results">
+      <ul data-bind="foreach: resultsList">
+          <li data-bind="text: name"></li>
+      </ul>
+    </div>
 
     <!-- Google Places Map -->
       <div id="map"></div>
