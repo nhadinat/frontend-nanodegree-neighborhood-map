@@ -38,20 +38,30 @@ function initialize() {
   input.style.margin = "10px 0 0 0";
   input.style.height = "29px";
 
+
   // Bias the SearchBox results towards current map's viewport.
+  // Will change to bind search box to list collection
   map.addListener('bounds_changed', function() {
     searchBox.setBounds(map.getBounds());
   });
+
+
+
+  // MARKERS //
 
   var markers = [];
   // [START region_getplaces]
   // Listen for the event fired when the user selects a prediction and retrieve
   // more details for that place.
+  // TODO: This is where I can repurpose to render update on list selection
   searchBox.addListener('places_changed', function() {
     var places = searchBox.getPlaces();
 
     if (places.length == 0) {
+      console.log('places length == 0, no data for search result');
       return;
+    } else {
+        console.log(places);
     }
 
     // Clear out the old markers.
@@ -89,9 +99,17 @@ function initialize() {
     map.fitBounds(bounds);
   });
   // [END region_getplaces]
-}
+} // End of initialize function
+
+
+
+
+
+
+// MARKER AND INFOWINDOW //
 
 // Create markers based on the PlacesService search data collection
+// This is where the markers will bind to the list collection
 function callback(results, status) {
   if (status === google.maps.places.PlacesServiceStatus.OK) {
     for (var i = 0; i < results.length; i++) {
@@ -109,7 +127,7 @@ function createMarker(place) {
     position: placeLoc
   });
 
-  // Infowindow on click
+  // Infowindow on click. I can edit the infowindow here. I can add marker buttonBounce here v^.
   google.maps.event.addListener(marker, 'click', function() {
     infowindow.setContent(place.name + ', ♥: ' + place.rating + '/5');
     infowindow.open(map, this);
