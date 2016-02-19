@@ -15,7 +15,7 @@
 
     <!-- Search function -->
     <div class="results">
-        <input id="filterBar" type="text" name="filterBar" placeholder="Filter Results">
+        <input id="filterBar" type="text" name="filterBar" placeholder="Filter Results" data-bind="textInput: Value">
       <ul data-bind="foreach: resultsList">
           <li data-bind="text: name"></li>
       </ul>
