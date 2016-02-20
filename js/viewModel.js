@@ -1,3 +1,4 @@
+"use strict";
 // VIEWMODEL: Map and Markers
 // Google Map API key: AIzaSyCFRFOiufsaKBMx3jmskWF1KEiEwZCudcs
 

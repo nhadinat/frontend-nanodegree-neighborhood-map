@@ -56,20 +56,3 @@ function createMarker(place) {
     infowindow.open(map, this);
   });
 }
-
-/*
-// Autocomplete bounds
-var defaultBounds = new google.maps.LatLngBounds(
-  new google.maps.LatLng(33.687422, -117.835076),
-  new google.maps.LatLng(33.689502, -117.832276)
-);
-
-// Get the input for the autocomplete search box
-var input = document.getElementById('pac-input');
-
-// Construct searchBox
-var searchBox = new google.maps.places.SearchBox(input, {
-  bounds: defaultBounds,
-  types: ['restaurants']
-});
-*/

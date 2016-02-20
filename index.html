@@ -15,7 +15,8 @@
 
     <!-- Search function -->
     <div class="results">
-        <input id="filterBar" type="text" name="filterBar" placeholder="Filter Results" data-bind="textInput: Value">
+        <!-- KO Filter data-bind="textInput: Value" -->
+        <input id="filterBar" type="text" name="filterBar" placeholder="Filter Results">
       <ul data-bind="foreach: resultsList">
           <li data-bind="text: name"></li>
       </ul>
@@ -29,7 +30,6 @@
     <script src="js/model.js"></script>
 
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFRFOiufsaKBMx3jmskWF1KEiEwZCudcs&libraries=places"></script>
-    <script src="js/googlePlacesMap.js"></script>
 
     <script src="js/viewModel.js"></script>
 
