@@ -1,7 +1,24 @@
-"use strict";
-// TODO: make initialResults = [someSortaListCollection]
+// COLLECTION
+//////////////////////////////////////////////////////////////////////
 
 var initialResults = [
+{
+  name: 'Lollicup',
+},
+{
+  name: 'Tokyo Table',
+},
+{
+  name: 'The Kicking Crab',
+},
+{
+  name: 'Balcony Grill & Bar',
+},
+{
+  name: 'Ajisen Ramen',
+}];
+
+/*
   {
     name: 'Lollicup',
     marker: 'markerLollicup',
@@ -27,4 +44,4 @@ var initialResults = [
     marker: 'markerAjisenRamen',
     latLng: {lat: 33.688856, lng:-117.833937}
   }
-];
+*/
