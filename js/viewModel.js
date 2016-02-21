@@ -1,23 +1,31 @@
-// VIEWMODEL: Map and Markers
+// VIEWMODEL
+//////////////////////////////////////////////////////////////////////
+
 // Google Map API key: AIzaSyCFRFOiufsaKBMx3jmskWF1KEiEwZCudcs
 
+// A Class of the ViewModel
 var ViewModel = function () {
   // Save ViewModel into self
   var self = this;
 
   // Store results into a KO array
-  self.resultsList = ko.observableArray([]);
+  self.list = ko.observableArray([]);
 
   // Push results collection into the list
-  initialResults.forEach(function(resultsItem){
-    self.resultsList.push( new Results(resultsItem) );
-  });
+  self.createList = function() {
+    console.log(initialResults);
+    initialResults.forEach(function(item){
+      self.list.push( new ResultsList(item) );
+    });
+  }
 
   // Set current results as the first item
-  self.currentResults = ko.observable(self.resultsList()[0]);
+  //self.currentResults = ko.observable(self.list()[0]);
 
   // Init Google Places Map
   initialize();
 };
 
-ko.applyBindings(new ViewModel());
+  // bind a new instance of our view model to the page
+  var viewModel = new ViewModel();
+  ko.applyBindings(viewModel);

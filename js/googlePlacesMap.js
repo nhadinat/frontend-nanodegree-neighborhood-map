@@ -1,3 +1,5 @@
+// INITIALIZE MAP //
+
 var map; // google map constructor
 var infowindow; // google marker's pop-up infowindow constructor
 
@@ -23,23 +25,23 @@ function initialize() {
     types: ['restaurant']
   }, callback);
 }
-
-
-
-
-
-
-// MARKER AND INFOWINDOW //
-
 // Create markers based on the PlacesService search data collection
 // This is where the markers will bind to the list collection
 function callback(results, status) {
   if (status === google.maps.places.PlacesServiceStatus.OK) {
     for (var i = 0; i < results.length; i++) {
+      // Convert PlacesService data into markers
       createMarker(results[i]);
+      // Store PlacesService into a collection
+      initialResults.push(results[i]);
     }
+    viewModel.createList();
   }
 }
+
+
+
+// MARKER AND INFOWINDOW //
 
 // Marker model
 function createMarker(place) {
@@ -50,26 +52,10 @@ function createMarker(place) {
     position: placeLoc
   });
 
-  // Infowindow on click. I can edit the infowindow here. I can add marker buttonBounce here v^.
+  // Infowindow on click. I can edit the infowindow here.
+  // I can add marker buttonBounce here v^.
   google.maps.event.addListener(marker, 'click', function() {
     infowindow.setContent(place.name + ', ♥: ' + place.rating + '/5');
     infowindow.open(map, this);
   });
 }
-
-/*
-// Autocomplete bounds
-var defaultBounds = new google.maps.LatLngBounds(
-  new google.maps.LatLng(33.687422, -117.835076),
-  new google.maps.LatLng(33.689502, -117.832276)
-);
-
-// Get the input for the autocomplete search box
-var input = document.getElementById('pac-input');
-
-// Construct searchBox
-var searchBox = new google.maps.places.SearchBox(input, {
-  bounds: defaultBounds,
-  types: ['restaurants']
-});
-*/
