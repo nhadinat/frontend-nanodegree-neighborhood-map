@@ -13,11 +13,13 @@ var ViewModel = function () {
 
   // Push results collection into the list
   self.createList = function() {
-    console.log(initialResults);
-    initialResults.forEach(function(item){
+    placesResults.forEach(function(item){
       self.list.push( new ResultsList(item) );
     });
-  }
+  };
+
+  // Detect textInput from view
+  self.filter = ko.observable(""); // We have a connection here, now what?
 
   // Set current results as the first item
   //self.currentResults = ko.observable(self.list()[0]);

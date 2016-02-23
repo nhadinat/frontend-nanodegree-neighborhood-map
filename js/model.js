@@ -8,7 +8,9 @@ var ResultsList = function (data) {
 };
 
 // COLLECTION //
-var initialResults = [];
+var placesResults = [];
+// YELP API //
+var yelpResults = [];
 
 
 // INITIALIZE MAP //
@@ -46,7 +48,7 @@ function callback(results, status) {
       // Convert PlacesService data into markers
       createMarker(results[i]);
       // Store PlacesService into a collection
-      initialResults.push(results[i]);
+      placesResults.push(results[i]);
     }
     viewModel.createList();
   }
@@ -56,7 +58,7 @@ function callback(results, status) {
 
 // MARKER AND INFOWINDOW //
 
-// Marker model
+// Marker Model
 function createMarker(place) {
   // Store place geolocation
   var placeLoc = place.geometry.location;
