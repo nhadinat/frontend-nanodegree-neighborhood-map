@@ -16,7 +16,7 @@
     <!-- Search function -->
     <div class="results">
         <!-- KO Filter data-bind="textInput: Value" -->
-        <input id="filterBar" type="text" name="filterBar" placeholder="Filter Results">
+        <input id="filterBar" type="text" name="filterBar" placeholder="Filter Results" data-bind="textInput: filter">
       <ul data-bind="foreach: list">
           <li data-bind="text: name"></li>
       </ul>
