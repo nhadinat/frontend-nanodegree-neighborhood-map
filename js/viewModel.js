@@ -13,8 +13,8 @@ var ViewModel = function () {
 
   // Push results collection into the list
   self.createList = function() {
-    console.log(initialResults);
-    initialResults.forEach(function(item){
+    console.log(placesResults);
+    placesResults.forEach(function(item){
       self.list.push( new ResultsList(item) );
     });
   }
