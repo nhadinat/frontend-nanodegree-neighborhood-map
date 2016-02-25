@@ -7,6 +7,7 @@
 var ViewModel = function () {
   // Save ViewModel into self
   var self = this;
+  var list;
 
   // Store results into a KO array
   self.list = ko.observableArray([]);
@@ -20,31 +21,23 @@ var ViewModel = function () {
 
   // Detect textInput from view
   self.filter = ko.observable("");
-  // We have a connection here, now what? indexOf(filter), toLowerCase()
-  self.filterChange = function () {
-      console.log('ey filterChange');
-    if (self.filter() !== "") {
-      console.log('ey filterValue');
-    }
-  };
-  /* COULD THIS BE THE ANSWERS!??!?!?
-  var viewModel = {
-    // …
 
-    search: function(value) {
-      // remove all the current beers, which removes them from the view
-      viewModel.beers.removeAll();
+  // Update the list with a filter function
+  self.filterUpdate = function(value) {
+    // Clear the list first
+    self.list.removeAll();
 
-      for(var x in beers) {
-        if(beers[x].name.toLowerCase().indexOf(value.toLowerCase()) >= 0) {
-          viewModel.beers.push(beers[x]);
-        }
+    // Cycle through list collection placesResults, than push back the filtered list
+    for(var x in placesResults) {
+      if(placesResults[x].name.toLowerCase().indexOf(value.toLowerCase()) >= 0) {
+        self.list.push( new ResultsList(placesResults[x]));
       }
     }
   };
 
-  viewModel.query.subscribe(viewModel.search);
-  */
+  // Have self.filter run filterUpdate on change
+  self.filter.subscribe(self.filterUpdate);
+
 
   // Show Hide List
   self.showList = ko.observable(true);
