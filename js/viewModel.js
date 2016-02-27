@@ -1,21 +1,22 @@
-// VIEWMODEL
-//////////////////////////////////////////////////////////////////////
+/* VIEWMODEL
+  =============================================================== */
 
 // Google Map API key: AIzaSyCFRFOiufsaKBMx3jmskWF1KEiEwZCudcs
 
 // A Class of the ViewModel
-var ViewModel = function () {
+var ViewModel = function() {
   // Save ViewModel into self
   var self = this;
-  var list;
 
   // Store results into a KO array
   self.list = ko.observableArray([]);
+  self.markers = ko.observableArray([]);
 
   // Push results collection into the list
-  self.createList = function() {
-    placesResults.forEach(function(item){
-      self.list.push( new ResultsList(item) );
+  self.createPlaces = function() {
+    placesResults.forEach(function(place) {
+      self.list.push( new ResultsModel(place) );
+      self.markers.push( new MarkersModel(place) );
     });
   };
 
@@ -23,14 +24,16 @@ var ViewModel = function () {
   self.filter = ko.observable("");
 
   // Update the list with a filter function
-  self.filterUpdate = function(value) {
-    // Clear the list first
+  self.filterUpdate = function(input) {
+    // Clear the list and markers first
     self.list.removeAll();
-
-    // Cycle through list collection placesResults, than push back the filtered list
-    for(var x in placesResults) {
-      if(placesResults[x].name.toLowerCase().indexOf(value.toLowerCase()) >= 0) {
-        self.list.push( new ResultsList(placesResults[x]));
+    self.markers.removeAll();
+    // Cycle through list collection placesResults, then push back the filtered list
+    // based on indexOf results
+    for(var place in placesResults) {
+      if(placesResults[place].name.toLowerCase().indexOf(input.toLowerCase()) >= 0) {
+        self.list.push( new ResultsModel(placesResults[place]));
+        self.markers.push( new MarkersModel(placesResults[place]));
       }
     }
   };
@@ -43,7 +46,7 @@ var ViewModel = function () {
   self.showList = ko.observable(true);
 
   // Set current results as the first item
-  //self.currentResults = ko.observable(self.list()[0]);
+  //self.currentResults = ko.observable(self.places()[0]);
 
   // Init Google Places Map
   initialize();
