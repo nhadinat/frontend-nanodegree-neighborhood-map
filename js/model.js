@@ -1,19 +1,42 @@
-// MODEL
-//////////////////////////////////////////////////////////////////////
+/* MODEL
+  =============================================================== */
 
-// ResultsList Model
-var ResultsList = function (data) {
+// ResultsModel CLASS
+var ResultsModel = function(place) {
   var self = this;
-  self.name = ko.observable(data.name);
+  self.name = place.name;
+
+  //Adds a marker to the map and pushes to the array.
+  var marker = new google.maps.Marker({
+    position: place.geometry.location,
+    map: map
+  });
+  viewModel.markers.push(marker);
 };
 
-// COLLECTION //
+/* MarkersModel
+var MarkersModel = function(place) {
+  // Store place geolocation
+  var placeLoc = place.geometry.location;
+  var marker = new google.maps.Marker({
+    map: map, // The google map constructor
+    position: placeLoc
+  });
+  // Infowindow on click. ADD marker buttonBounce here v^.
+  google.maps.event.addListener(marker, 'click', function() {
+    infowindow.setContent(place.name + ', ♥: ' + place.rating + '/5');
+    infowindow.open(map, this);
+  });
+}; */
+
+
+// PLACES SERVICE COLLECTION
 var placesResults = [];
-// YELP API //
+// YELP API
 var yelpResults = [];
 
 
-// INITIALIZE MAP //
+// INITIALIZE MAP
 
 var map; // google map constructor
 var infowindow; // google marker's pop-up infowindow constructor
@@ -40,37 +63,13 @@ function initialize() {
     types: ['restaurant']
   }, callback);
 }
-// Create markers based on the PlacesService search data collection
-// This is where the markers will bind to the list collection
+// Collect PlacesService data
 function callback(results, status) {
   if (status === google.maps.places.PlacesServiceStatus.OK) {
     for (var i = 0; i < results.length; i++) {
-      // Convert PlacesService data into markers
-      createMarker(results[i]);
       // Store PlacesService into a collection
       placesResults.push(results[i]);
     }
-    viewModel.createList();
+    viewModel.createPlaces();
   }
-}
-
-
-
-// MARKER AND INFOWINDOW //
-
-// Marker Model
-function createMarker(place) {
-  // Store place geolocation
-  var placeLoc = place.geometry.location;
-  var marker = new google.maps.Marker({
-    map: map,
-    position: placeLoc
-  });
-
-  // Infowindow on click. I can edit the infowindow here.
-  // I can add marker buttonBounce here v^.
-  google.maps.event.addListener(marker, 'click', function() {
-    infowindow.setContent(place.name + ', ♥: ' + place.rating + '/5');
-    infowindow.open(map, this);
-  });
 }

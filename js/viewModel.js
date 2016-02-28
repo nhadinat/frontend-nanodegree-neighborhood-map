@@ -1,39 +1,61 @@
-// VIEWMODEL
-//////////////////////////////////////////////////////////////////////
+/* VIEWMODEL
+  =============================================================== */
 
 // Google Map API key: AIzaSyCFRFOiufsaKBMx3jmskWF1KEiEwZCudcs
 
 // A Class of the ViewModel
-var ViewModel = function () {
+var ViewModel = function() {
   // Save ViewModel into self
   var self = this;
-  var list;
 
   // Store results into a KO array
   self.list = ko.observableArray([]);
+  self.markers = [];
 
-  // Push results collection into the list
-  self.createList = function() {
-    placesResults.forEach(function(item){
-      self.list.push( new ResultsList(item) );
+  // Push results collection into the list and create markers
+  self.createPlaces = function() {
+    placesResults.forEach(function(place) {
+      self.list.push( new ResultsModel(place) );
+      //self.markers.push( new MarkersModel(place) );
+      //addMarker(place);
     });
   };
+
+  // Sets the map on all markers in the array.
+  self.setMapOnAll = function(map) {
+    for (var i = 0; i < self.markers.length; i++) {
+      self.markers[i].setMap(map);
+      console.log('viewModel.setMapOnAll');
+    }
+  };
+
+  // Deletes all markers in the array by removing references to them.
+  self.deleteMarkers = function() {
+    self.setMapOnAll(null);
+    self.markers = [];
+    console.log('viewModel.deleteMarkers');
+  };
+
 
   // Detect textInput from view
   self.filter = ko.observable("");
 
   // Update the list with a filter function
-  self.filterUpdate = function(value) {
-    // Clear the list first
+  self.filterUpdate = function(input) {
+    // Clear the list and markers first
     self.list.removeAll();
-
-    // Cycle through list collection placesResults, than push back the filtered list
-    for(var x in placesResults) {
-      if(placesResults[x].name.toLowerCase().indexOf(value.toLowerCase()) >= 0) {
-        self.list.push( new ResultsList(placesResults[x]));
+    self.deleteMarkers(); // This removes the markers that don't apply
+    // Cycle through list collection placesResults, then push back the filtered list
+    // based on indexOf results
+    for(var place in placesResults) {
+      if(placesResults[place].name.toLowerCase().indexOf(input.toLowerCase()) >= 0) {
+        self.list.push( new ResultsModel(placesResults[place]));
       }
     }
+    console.log(viewModel.markers);
   };
+
+
 
   // Have self.filter run filterUpdate on change
   self.filter.subscribe(self.filterUpdate);
@@ -43,7 +65,7 @@ var ViewModel = function () {
   self.showList = ko.observable(true);
 
   // Set current results as the first item
-  //self.currentResults = ko.observable(self.list()[0]);
+  //self.currentResults = ko.observable(self.places()[0]);
 
   // Init Google Places Map
   initialize();
