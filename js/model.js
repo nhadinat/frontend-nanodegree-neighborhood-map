@@ -19,8 +19,7 @@ var ResultsModel = function(place) {
   google.maps.event.addListener(marker, 'click', function() {
     infowindow.setContent(place.name + ', ♥: ' + place.rating + '/5');
     infowindow.open(map, this);
-    console.log(place.name);
-    viewModel.setPlace(this, place.name);
+    viewModel.markerSetPlace(this, place.name);
   });
 };
 

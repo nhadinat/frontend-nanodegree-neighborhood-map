@@ -68,12 +68,19 @@ var ViewModel = function() {
 
   // Start current place as the first item
   self.currentPlace = ko.observable(self.list()[0]);
-    console.dir('Starting current place is ' + self.currentPlace);
+  console.dir('Starting current place is ' + self.currentPlace.name);
 
-  // Set current place to the clicked marker or list item (view)
-  self.setPlace = function(clickedPlace, placeName) {
+  // Set current place to the clicked marker
+  self.markerSetPlace = function(clickedPlace, placeName) {
     self.currentPlace(clickedPlace);
-    console.dir('current place is ' + placeName);
+    console.dir('marker-current place is ' + placeName);
+  };
+
+  // Set current place to the clicked list item (view)
+  self.listSetPlace = function(clickedListItem) {
+    self.currentPlace(clickedListItem);
+    var placeName = clickedListItem.name;
+    console.dir('list-current place is ' + placeName);
   };
 
 

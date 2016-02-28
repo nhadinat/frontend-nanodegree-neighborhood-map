@@ -15,9 +15,11 @@
 
     <!-- Search function -->
     <div class="results">
-        <input id="filterBar" type="text" name="filterBar" placeholder="Filter Results" data-bind="textInput: filter, hasfocus: showList">
+        <input id="filterBar" type="text" name="filterBar" placeholder="Filter Results" data-bind="textInput: filter"> <!--, hasfocus: showList-->
       <ul data-bind="foreach: list, visible: showList">
-          <li data-bind="text: name"></li>
+          <li>
+            <span data-bind="text: name, click: viewModel.listSetPlace"></span>
+          </li>
       </ul>
     </div>
 
