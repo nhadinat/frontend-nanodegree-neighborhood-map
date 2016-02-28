@@ -5,9 +5,16 @@
 var ResultsModel = function(place) {
   var self = this;
   self.name = place.name;
+
+  //Adds a marker to the map and pushes to the array.
+  var marker = new google.maps.Marker({
+    position: place.geometry.location,
+    map: map
+  });
+  viewModel.markers.push(marker);
 };
 
-// MarkersModel CLASS
+/* MarkersModel
 var MarkersModel = function(place) {
   // Store place geolocation
   var placeLoc = place.geometry.location;
@@ -20,7 +27,7 @@ var MarkersModel = function(place) {
     infowindow.setContent(place.name + ', ♥: ' + place.rating + '/5');
     infowindow.open(map, this);
   });
-};
+}; */
 
 
 // PLACES SERVICE COLLECTION
