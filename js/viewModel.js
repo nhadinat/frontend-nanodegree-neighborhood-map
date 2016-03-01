@@ -8,6 +8,9 @@ var ViewModel = function() {
   // Save ViewModel into self
   var self = this;
 
+
+  /* List and Markers */
+
   // Store results into a KO array
   self.list = ko.observableArray([]);
   self.markers = [];
@@ -16,16 +19,15 @@ var ViewModel = function() {
   self.createPlaces = function() {
     placesResults.forEach(function(place) {
       self.list.push( new ResultsModel(place) );
-      //self.markers.push( new MarkersModel(place) );
-      //addMarker(place);
     });
+    console.log(self.list());
+    console.log('self.list()[0].name = ' + self.list()[0].name);
   };
 
   // Sets the map on all markers in the array.
   self.setMapOnAll = function(map) {
     for (var i = 0; i < self.markers.length; i++) {
-      self.markers[i].setMap(map);
-      console.log('viewModel.setMapOnAll');
+      self.markers[i].setMap(map); // allows the map to recognize the markers
     }
   };
 
@@ -33,11 +35,12 @@ var ViewModel = function() {
   self.deleteMarkers = function() {
     self.setMapOnAll(null);
     self.markers = [];
-    console.log('viewModel.deleteMarkers');
   };
 
 
-  // Detect textInput from view
+  /* Input Detection */
+
+  // Detect text input from view
   self.filter = ko.observable("");
 
   // Update the list with a filter function
@@ -52,20 +55,37 @@ var ViewModel = function() {
         self.list.push( new ResultsModel(placesResults[place]));
       }
     }
-    console.log(viewModel.markers);
   };
-
-
 
   // Have self.filter run filterUpdate on change
   self.filter.subscribe(self.filterUpdate);
 
 
+  /* Active States */
+
   // Show Hide List
   self.showList = ko.observable(true);
 
-  // Set current results as the first item
-  //self.currentResults = ko.observable(self.places()[0]);
+  // Create current place
+  self.currentPlace = ko.observable();
+
+  // Set current place to the clicked marker
+  self.markerSetPlace = function(modelItem) {
+    console.dir(modelItem);
+    self.currentPlace(modelItem);
+    self.currentPlace().name = modelItem;
+    console.log('marker-current place is ' + self.currentPlace().name);
+  };
+
+  // Set current place to the clicked list item (view)
+  self.listSetPlace = function(clickedListItem) {
+    console.log(clickedListItem);
+    self.currentPlace(clickedListItem);
+    console.log('list-current place is ' + self.currentPlace().name);
+  };
+
+
+  /* Initialize */
 
   // Init Google Places Map
   initialize();

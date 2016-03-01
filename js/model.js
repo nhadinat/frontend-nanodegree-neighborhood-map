@@ -1,10 +1,18 @@
 /* MODEL
   =============================================================== */
 
+
+/* SuperClasses */
+
 // ResultsModel CLASS
 var ResultsModel = function(place) {
   var self = this;
   self.name = place.name;
+  self.id = place.place_id;
+  // Current place recognition by computed ko
+  self.isCurrent = ko.computed(function() {
+      return viewModel.currentPlace() === self;
+  });
 
   //Adds a marker to the map and pushes to the array.
   var marker = new google.maps.Marker({
@@ -12,31 +20,24 @@ var ResultsModel = function(place) {
     map: map
   });
   viewModel.markers.push(marker);
-};
-
-/* MarkersModel
-var MarkersModel = function(place) {
-  // Store place geolocation
-  var placeLoc = place.geometry.location;
-  var marker = new google.maps.Marker({
-    map: map, // The google map constructor
-    position: placeLoc
-  });
   // Infowindow on click. ADD marker buttonBounce here v^.
   google.maps.event.addListener(marker, 'click', function() {
     infowindow.setContent(place.name + ', ♥: ' + place.rating + '/5');
     infowindow.open(map, this);
+    viewModel.markerSetPlace(self);
   });
-}; */
+};
 
 
-// PLACES SERVICE COLLECTION
+/* Collections */
+
+// Places Service Collection
 var placesResults = [];
-// YELP API
+// Yelp API Collection
 var yelpResults = [];
 
 
-// INITIALIZE MAP
+/* Google Places Map */
 
 var map; // google map constructor
 var infowindow; // google marker's pop-up infowindow constructor
@@ -63,7 +64,7 @@ function initialize() {
     types: ['restaurant']
   }, callback);
 }
-// Collect PlacesService data
+// Collect PlacesService data on callback
 function callback(results, status) {
   if (status === google.maps.places.PlacesServiceStatus.OK) {
     for (var i = 0; i < results.length; i++) {
