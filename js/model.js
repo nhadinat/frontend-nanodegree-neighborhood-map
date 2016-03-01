@@ -8,6 +8,11 @@
 var ResultsModel = function(place) {
   var self = this;
   self.name = place.name;
+  self.id = place.place_id;
+  // Current place recognition by computed ko
+  self.isCurrent = ko.computed(function() {
+      return viewModel.currentPlace() === self;
+  });
 
   //Adds a marker to the map and pushes to the array.
   var marker = new google.maps.Marker({
@@ -19,7 +24,7 @@ var ResultsModel = function(place) {
   google.maps.event.addListener(marker, 'click', function() {
     infowindow.setContent(place.name + ', ♥: ' + place.rating + '/5');
     infowindow.open(map, this);
-    viewModel.markerSetPlace(this, place.name);
+    viewModel.markerSetPlace(self);
   });
 };
 

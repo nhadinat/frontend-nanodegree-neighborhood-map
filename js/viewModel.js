@@ -19,9 +19,9 @@ var ViewModel = function() {
   self.createPlaces = function() {
     placesResults.forEach(function(place) {
       self.list.push( new ResultsModel(place) );
-      //self.markers.push( new MarkersModel(place) );
-      //addMarker(place);
     });
+    console.log(self.list());
+    console.log('self.list()[0].name = ' + self.list()[0].name);
   };
 
   // Sets the map on all markers in the array.
@@ -66,21 +66,22 @@ var ViewModel = function() {
   // Show Hide List
   self.showList = ko.observable(true);
 
-  // Start current place as the first item
-  self.currentPlace = ko.observable(self.list()[0]);
-  console.dir('Starting current place is ' + self.currentPlace.name);
+  // Create current place
+  self.currentPlace = ko.observable();
 
   // Set current place to the clicked marker
-  self.markerSetPlace = function(clickedPlace, placeName) {
-    self.currentPlace(clickedPlace);
-    console.dir('marker-current place is ' + placeName);
+  self.markerSetPlace = function(modelItem) {
+    console.dir(modelItem);
+    self.currentPlace(modelItem);
+    self.currentPlace().name = modelItem;
+    console.log('marker-current place is ' + self.currentPlace().name);
   };
 
   // Set current place to the clicked list item (view)
   self.listSetPlace = function(clickedListItem) {
+    console.log(clickedListItem);
     self.currentPlace(clickedListItem);
-    var placeName = clickedListItem.name;
-    console.dir('list-current place is ' + placeName);
+    console.log('list-current place is ' + self.currentPlace().name);
   };
 
 
