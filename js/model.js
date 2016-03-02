@@ -7,24 +7,36 @@
 // ResultsModel CLASS
 var ResultsModel = function(place) {
   var self = this;
+
   self.name = place.name;
   self.id = place.place_id;
-  // Current place recognition by computed ko
-  self.isCurrent = ko.computed(function() {
-      return viewModel.currentPlace() === self;
-  });
+  self.rating = place.rating;
 
-  //Adds a marker to the map and pushes to the array.
-  var marker = new google.maps.Marker({
+  // Adds a marker to the map and pushes to the markers array.
+  self.marker = new google.maps.Marker({
     position: place.geometry.location,
     map: map
   });
-  viewModel.markers.push(marker);
-  // Infowindow on click. ADD marker buttonBounce here v^.
-  google.maps.event.addListener(marker, 'click', function() {
-    infowindow.setContent(place.name + ', ♥: ' + place.rating + '/5');
+  viewModel.markers.push(self.marker);
+
+  // Infowindow on marker click. ADD marker buttonBounce here v^.
+  self.marker.addListener('click', function() {
+    infowindow.setContent(self.name + ', ♥: ' + self.rating + '/5')
     infowindow.open(map, this);
-    viewModel.markerSetPlace(self);
+    viewModel.setPlace(self);
+  });
+
+  // Infowindow on list click. Just like the marker listener, but with ko
+  // ADD marker buttonBounce here v^.
+  self.infoPop = function() {
+    infowindow.setContent(self.name + ', ♥: ' + self.rating + '/5')
+    infowindow.open(map, self.marker);
+    viewModel.setPlace(self);
+  };
+
+  // Current place recognition by computed ko
+  self.isCurrent = ko.computed(function() {
+      return viewModel.currentPlace() === self;
   });
 };
 

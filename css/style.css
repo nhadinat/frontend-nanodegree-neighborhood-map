@@ -81,6 +81,7 @@ div.results ul li:active {
   box-shadow: 0.5px 0.5px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
+/* Active state of list-items */
 .current {
   color: #e65;
   font-weight: bold;

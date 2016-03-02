@@ -18,7 +18,7 @@
         <input id="filterBar" type="text" name="filterBar" placeholder="Filter Results" data-bind="textInput: filter"> <!--, hasfocus: showList-->
       <ul data-bind="foreach: list, visible: showList">
           <li>
-            <span data-bind="text: $data.name, click: $parent.listSetPlace, css: { current: isCurrent}"></span>
+            <span data-bind="text: name, click: infoPop, css: { current: isCurrent}"></span>
           </li>
       </ul>
     </div>
