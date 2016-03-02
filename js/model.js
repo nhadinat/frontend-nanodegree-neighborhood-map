@@ -61,7 +61,7 @@ function initialize() {
   service.nearbySearch({
     location: lollicup,
     radius: 250,
-    types: ['restaurant']
+    types: ['restaurant', 'cafe']
   }, callback);
 }
 // Collect PlacesService data on callback
