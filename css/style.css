@@ -55,6 +55,7 @@ div.results {
   }
 div.results ul {
   padding: 0;
+  margin: 0;
 }
 div.results ul li {
   padding: 5px 10px;
@@ -62,11 +63,11 @@ div.results ul li {
   font-size: 14px;
 }
 div.results ul li:hover {
-  color: #777;
+  color: #b32;
   cursor: pointer;
 }
 div.results ul li:active {
-  color: #777;
+  color: #e65;
 }
 
 /* Filter Bar */
@@ -85,5 +86,24 @@ div.results ul li:active {
 .current {
   color: #e65;
   font-weight: bold;
-  border-bottom: 2px solid #e65;
+}
+
+/* Hide List Button */
+#hide-button {
+  position: absolute;
+  font-size: 30px;
+  color: #fff;
+  top: -4px;
+  left: 203px;
+  padding: 1px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: .2s;
+}
+#hide-button:hover {
+  color: #b32;
+}
+#hide-button:active {
+  color: #e65;
 }

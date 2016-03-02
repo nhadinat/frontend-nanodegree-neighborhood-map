@@ -64,7 +64,13 @@ var ViewModel = function() {
   /* Active States */
 
   // Show Hide List
-  self.showList = ko.observable(true);
+  self.visibleList = ko.observable(false);
+  self.hideList = function() {
+    self.visibleList(false);
+  };
+  self.showList = function() {
+    self.visibleList(true);
+  };
 
   // Create current place
   self.currentPlace = ko.observable();
