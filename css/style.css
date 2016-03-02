@@ -102,7 +102,7 @@ div.results ul li:active {
   transition: .2s;
 }
 #hide-button:hover {
-  color: #b32;
+  color: #777;
 }
 #hide-button:active {
   color: #e65;
