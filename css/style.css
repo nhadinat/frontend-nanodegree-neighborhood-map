@@ -91,10 +91,10 @@ div.results ul li:active {
 /* Hide List Button */
 #hide-button {
   position: absolute;
-  font-size: 30px;
+  font-size: 20px;
   color: #fff;
-  top: -4px;
-  left: 203px;
+  top: 0px;
+  left: 205px;
   padding: 1px;
   border: none;
   background: none;

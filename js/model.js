@@ -14,25 +14,30 @@ var ResultsModel = function(place) {
 
   // Adds a marker to the map and pushes to the markers array.
   self.marker = new google.maps.Marker({
-    position: place.geometry.location,
-    map: map
+    map: map,
+    animation: google.maps.Animation.DROP,
+    position: place.geometry.location
   });
   viewModel.markers.push(self.marker);
 
-  // Infowindow on marker click. ADD marker buttonBounce here v^.
-  self.marker.addListener('click', function() {
-    infowindow.setContent(self.name + ', ♥: ' + self.rating + '/5')
-    infowindow.open(map, this);
-    viewModel.setPlace(self);
-  });
+  self.toggleBounce = function() {
+    self.marker.setAnimation(google.maps.Animation.BOUNCE);
+    setTimeout(function(){ self.marker.setAnimation(null); }, 750);
+  };
 
   // Infowindow on list click. Just like the marker listener, but with ko
-  // ADD marker buttonBounce here v^.
   self.infoPop = function() {
-    infowindow.setContent(self.name + ', ♥: ' + self.rating + '/5')
+    self.toggleBounce();
+    infowindow.setContent(self.name + ', ♥: ' + self.rating + '/5');
     infowindow.open(map, self.marker);
     viewModel.setPlace(self);
   };
+
+  // Infowindow on marker click.
+  self.marker.addListener('click', function() {
+    self.infoPop();
+  });
+
 
   // Current place recognition by computed ko
   self.isCurrent = ko.computed(function() {
