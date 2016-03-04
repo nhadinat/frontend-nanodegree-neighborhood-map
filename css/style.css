@@ -63,11 +63,12 @@ div.results ul li {
   font-size: 14px;
 }
 div.results ul li:hover {
-  color: #b32;
+  color: #e65;
   cursor: pointer;
 }
 div.results ul li:active {
   color: #e65;
+  cursor: pointer;
 }
 
 /* Filter Bar */
@@ -92,9 +93,9 @@ div.results ul li:active {
 #hide-button {
   position: absolute;
   font-size: 20px;
-  color: #fff;
-  top: 0px;
-  left: 205px;
+  color: #aaa;
+  top: 2px;
+  left: 184px;
   padding: 1px;
   border: none;
   background: none;

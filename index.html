@@ -16,7 +16,7 @@
     <!-- Search function -->
     <div class="results">
       <input id="filterBar" type="text" placeholder="Filter Results" data-bind="textInput: filter, click: showList"> <!--, hasfocus: showList, click: hideList-->
-      <input id="hide-button" type="button" value="✖" data-bind="click: hideList">
+      <input id="hide-button" type="button" value="x" data-bind="click: hideList">
       <ul data-bind="foreach: list, visible: visibleList">
           <li>
             <span data-bind="text: name, click: infoPop, css: { current: isCurrent}"></span>
