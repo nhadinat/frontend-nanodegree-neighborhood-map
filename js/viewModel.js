@@ -1,8 +1,6 @@
 /* VIEWMODEL
   =============================================================== */
 
-// Google Map API key: AIzaSyCFRFOiufsaKBMx3jmskWF1KEiEwZCudcs
-
 // A Class of the ViewModel
 var ViewModel = function() {
   // Save ViewModel into self
@@ -50,8 +48,8 @@ var ViewModel = function() {
     self.deleteMarkers(); // This removes the markers that don't apply
     // Cycle through list collection placesResults, then push back the filtered list
     // based on indexOf results
-    for(var place in placesResults) {
-      if(placesResults[place].name.toLowerCase().indexOf(input.toLowerCase()) >= 0) {
+    for (var place in placesResults) {
+      if (placesResults[place].name.toLowerCase().indexOf(input.toLowerCase()) >= 0) {
         self.list.push( new ResultsModel(placesResults[place]));
       }
     }
