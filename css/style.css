@@ -71,6 +71,11 @@ div.results ul li:active {
   cursor: pointer;
 }
 
+.place-img {
+  max-width: 150px !important;
+  border-radius: 10px;
+}
+
 /* Filter Bar */
 #filterBar {
   border-radius: 2px;
