@@ -12,11 +12,11 @@ var ResultsModel = function(place) {
   self.rating = place.rating;
   // self.img = 'something from MediaWiki'
   // use self.content to populate infowindow
-  self.content = '<img class="place-img" src="http://superbpix.com/files/funzug/imgs/walls/big/cute_cats_wal_03.jpg"><br>'
+  self.content = '<img class="place-img" src="http://superbpix.com/files/funzug/imgs/walls/big/cute_cats_wal_03.jpg"><br>' +
         // '<img class="place-img" src="' + self.img + '"><br>'
-        + '<strong>' + self.name + '</strong>'
-        + '<br>♥ : ' + self.rating + '/5'
-        + '<br>' + firstArticle;
+        '<strong>' + self.name + '</strong>' +
+        '<br>♥ : ' + self.rating + '/5' +
+        '<br>' + firstArticle;
 
   // Adds a marker to the map and pushes to the markers array.
   self.marker = new google.maps.Marker({
@@ -41,8 +41,9 @@ var ResultsModel = function(place) {
 
   // Infowindow on marker click.
   self.marker.addListener('click', function() {
-    self.infoPop();
     getWiki(self.name);
+    // TODO: when api is done, run infoPop()
+    self.infoPop();
   });
 
 
