@@ -1,9 +1,21 @@
 ///////////////* Setup *///////////////
 
 var gulp = require('gulp'),
+  del = require('del'),
+  merge = require('merge-stream'),
+  uglify = require('gulp-uglify'),
+  minifyCSS = require('gulp-minify-css'),
+  rename = require("gulp-rename"),
+  minifyHTML = require('gulp-minify-html'),
+  inlinesource = require('gulp-inline-source'),
   ghPages = require('gulp-gh-pages');
 
 ///////////////* Stream *///////////////
+
+// Clean Dist
+gulp.task('clean', function (cb) {
+  del(['./dist/**'], cb);
+});
 
 // Move to dist
 gulp.task('css', function() {

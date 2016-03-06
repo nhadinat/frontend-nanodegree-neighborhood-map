@@ -1,26 +1,24 @@
-# frontend-nanodegree-neighborhood-map
-Udacity project 5, neighborhood map
+#Front-End Nanodegree Neighborhood Map
 
-#Front-End Nanodegree Arcade Game
+This is an interactive map of Diamond Jamboree, an outdoor mall in Irvine, California.
 
-This is a clone of the game, Frogger, to practice and demonstrate object-oriented, pseudo-classical Javascript.
-
-Project is designed to the following Udacity [Rubric](https://www.udacity.com/course/viewer#!/c-ud015/l-3072058665/m-3072588797 "Udacity Rubric for Project 3")
+This project is designed to the following Udacity [Rubric](https://www.udacity.com/course/viewer#!/c-nd001/l-2711658591/m-2684328537 "Udacity Rubric for Project 5")
 
 ##Features
 
-* Object-oriented, pseudo-classical Javascript
-* Game clock engine
-* Resource caching
-* HTML canvas loops
-* Collision detection by bounding boxes
-* Point system tied to the Player class
-* Event listener for keyboard input
+* Knockout.js MVVM software architechural pattern
+* Filter Bar and other knockout interactions
+* Google Places API
+* Google Maps and Marker visual manipulation
+* 3rd party collection (Places Service) processing
+* MediaWiki API
+* AJAX requests with error handling
+* Responsive design
 
-##Installation & Play
+##How to Run
 
-To run the game, visit [nhadinat.github.io/frontend-nanodegree-arcade-game](http://nhadinat.github.io/frontend-nanodegree-arcade-game "Nate Hadinata's Front-End Nanodegree Arcade Game") on your web browser. Use the arrow keys on your keyboard to guide the princess to safe waters. Avoid the mean bugs who won't stop for any reason at all!
+To run the app, visit [nhadinat.github.io/frontend-nanodegree-neighborhood-map](http://nhadinat.github.io/frontend-nanodegree-neighborhood-map "Diamond Jamboree: Restaurants and Cafes") on your web browser. Interact with the markers and the filter bar at the upper left corner.
 
-Good luck!
+Enjoy!
 ---
 Nate Hadinata
