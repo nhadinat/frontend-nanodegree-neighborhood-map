@@ -10,6 +10,7 @@ var ResultsModel = function(place) {
   self.name = place.name;
   self.id = place.place_id;
   self.rating = place.rating;
+  self.location = place.geometry.location;
   // Put API results in here in an observable,
   // so that it'll populate correctly upon API success, instead of being undefined
   self.api = ko.observable('');
@@ -21,7 +22,7 @@ var ResultsModel = function(place) {
   self.marker = new google.maps.Marker({
     map: map,
     animation: google.maps.Animation.DROP,
-    position: place.geometry.location
+    position: self.location
   });
   viewModel.markers.push(self.marker);
 
@@ -35,8 +36,6 @@ var ResultsModel = function(place) {
   self.infoPop = function() {
     self.toggleBounce();
     infowindow.setContent(
-        '<img class="place-img" src="http://superbpix.com/files/funzug/imgs/walls/big/cute_cats_wal_03.jpg"><br>' +
-        // '<img class="place-img" src="' + self.img + '"><br>'
         '<strong>' + self.name + '</strong>' +
         '<br>♥ : ' + self.rating + '/5' +
         '<br>' + self.api()
