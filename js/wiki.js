@@ -19,7 +19,7 @@ var getWiki = function(place) {
     url: wikiUrl,
     dataType: 'jsonp',
     success: function (response) {
-      console.log('success: ' + response + webUrl.length);
+      console.log('success: ' + response);
 
       var articles = response[1];
       var webUrl = response[3];
