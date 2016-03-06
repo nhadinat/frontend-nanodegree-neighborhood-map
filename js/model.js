@@ -10,13 +10,12 @@ var ResultsModel = function(place) {
   self.name = place.name;
   self.id = place.place_id;
   self.rating = place.rating;
-  // self.img = 'something from MediaWiki'
-  // use self.content to populate infowindow
-  self.content = '<img class="place-img" src="http://superbpix.com/files/funzug/imgs/walls/big/cute_cats_wal_03.jpg"><br>' +
-        // '<img class="place-img" src="' + self.img + '"><br>'
-        '<strong>' + self.name + '</strong>' +
-        '<br>♥ : ' + self.rating + '/5' +
-        '<br>' + firstArticle;
+  // Put API results in here in an observable,
+  // so that it'll populate correctly upon API success, instead of being undefined
+  self.api = ko.observable('');
+
+  // Gather API results for this place
+  getWiki(self);
 
   // Adds a marker to the map and pushes to the markers array.
   self.marker = new google.maps.Marker({
@@ -26,6 +25,7 @@ var ResultsModel = function(place) {
   });
   viewModel.markers.push(self.marker);
 
+  // Bounces Markers
   self.toggleBounce = function() {
     self.marker.setAnimation(google.maps.Animation.BOUNCE);
     setTimeout(function(){ self.marker.setAnimation(null); }, 750);
@@ -34,15 +34,19 @@ var ResultsModel = function(place) {
   // Infowindow on list click. Just like the marker listener, but with ko
   self.infoPop = function() {
     self.toggleBounce();
-    infowindow.setContent(self.content);
+    infowindow.setContent(
+        '<img class="place-img" src="http://superbpix.com/files/funzug/imgs/walls/big/cute_cats_wal_03.jpg"><br>' +
+        // '<img class="place-img" src="' + self.img + '"><br>'
+        '<strong>' + self.name + '</strong>' +
+        '<br>♥ : ' + self.rating + '/5' +
+        '<br>' + self.api()
+      );
     infowindow.open(map, self.marker);
     viewModel.setPlace(self);
   };
 
   // Infowindow on marker click.
   self.marker.addListener('click', function() {
-    getWiki(self.name);
-    // TODO: when api is done, run infoPop()
     self.infoPop();
   });
 
@@ -55,11 +59,8 @@ var ResultsModel = function(place) {
 
 
 /* Collections */
-
 // Places Service Collection
 var placesResults = [];
-// Yelp API Collection
-var yelpResults = [];
 
 
 /* Google Places Map */
