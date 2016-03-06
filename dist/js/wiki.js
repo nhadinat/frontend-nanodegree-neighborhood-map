@@ -32,6 +32,7 @@ var getWiki = function(place) {
       }
 
     },
+    // Error Handling
     error: function (data, status, error) {
       console.log(error);
       $wikiElem.append('<p>MediaWiki Could Not Be Loaded</p>');
