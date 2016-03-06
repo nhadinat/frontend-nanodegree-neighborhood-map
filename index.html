@@ -11,16 +11,14 @@
 
   <body>
 
-    <!-- Implement input text area to filter your map markers displayed in step 4. The input text area should filter on markers that already show up. Simply providing a search function through a third-party API and displaying the results is not enough. -->
-
     <!-- Search function -->
     <div class="results">
-      <input id="filterBar" type="text" placeholder="Filter Results" data-bind="textInput: filter, click: showList"> <!--, hasfocus: showList, click: hideList-->
-      <input id="hide-button" type="button" value="✖" data-bind="click: hideList">
+      <input id="filterBar" type="text" placeholder="Filter Results" data-bind="textInput: filter, click: showList">
+      <input id="hide-button" type="button" value="x" data-bind="click: hideList">
       <ul data-bind="foreach: list, visible: visibleList">
-          <li>
-            <span data-bind="text: name, click: infoPop, css: { current: isCurrent}"></span>
-          </li>
+        <li>
+          <span data-bind="text: name, click: infoPop, css: { current: isCurrent}"></span>
+        </li>
       </ul>
     </div>
 
@@ -28,6 +26,8 @@
       <div id="map"></div>
 
     <script src="js/libs/knockout-3.4.0.js"></script>
+    <script src="js/libs/jquery-2.1.4.min.js"></script>
+    <script src="js/wiki.js"></script>
     <script src="js/model.js"></script>
 
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFRFOiufsaKBMx3jmskWF1KEiEwZCudcs&libraries=places"></script>
