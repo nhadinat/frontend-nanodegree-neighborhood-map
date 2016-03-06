@@ -1,0 +1,115 @@
+/* Google Map Styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+#map {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+/* Theme */
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: #0078a6;
+  color: #222;
+}
+
+/* Normalize */
+h1, h2, h3, h4, p {
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  font-size: 20px;
+}
+h2 {
+  font-size: 16px;
+}
+p {
+  font-size: 11px;
+}
+
+/* Results Section */
+div.results {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.9);
+  left: 120px;
+  top: 10px;
+  width: 200px;
+  z-index: 999;
+    box-shadow: 0.5px 0.5px 1px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+}
+  @media screen and (min-width: 500px) {
+    div.results {
+      left: 113px;
+    }
+  }
+  @media screen and (min-width: 500px) {
+  .controls {
+      height: 29px;
+    }
+  }
+div.results ul {
+  padding: 0;
+  margin: 0;
+}
+div.results ul li {
+  padding: 5px 10px;
+  list-style: none;
+  font-size: 14px;
+}
+div.results ul li:hover {
+  color: #e65;
+  cursor: pointer;
+}
+div.results ul li:active {
+  color: #e65;
+  cursor: pointer;
+}
+
+.place-img {
+  max-width: 150px !important;
+  border-radius: 10px;
+}
+
+/* Filter Bar */
+#filterBar {
+  border-radius: 2px;
+  border: 0px solid #ccc;
+  width: 191px;
+  height: 33px;
+  padding: 0 0 0 9px;
+  margin: 0;
+  font-size: 16px;
+  box-shadow: 0.5px 0.5px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+/* Active state of list-items */
+.current {
+  color: #e65;
+  font-weight: bold;
+}
+
+/* Hide List Button */
+#hide-button {
+  position: absolute;
+  font-size: 20px;
+  color: #aaa;
+  top: 2px;
+  left: 184px;
+  padding: 1px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: .2s;
+}
+#hide-button:hover {
+  color: #777;
+}
+#hide-button:active {
+  color: #e65;
+}
