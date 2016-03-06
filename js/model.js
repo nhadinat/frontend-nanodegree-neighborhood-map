@@ -38,6 +38,7 @@ var ResultsModel = function(place) {
     infowindow.setContent(
         '<strong>' + self.name + '</strong>' +
         '<br>♥ : ' + self.rating + '/5' +
+        '<br><em>Wikipedia Articles:</em>' +
         '<br>' + self.api()
       );
     infowindow.open(map, self.marker);
