@@ -6,7 +6,8 @@
   '&location=2700-2750 Alton Pkwy, Irvine, CA 92606&limit=1'
   */
 var getYelp = function (place) {
-  console.log('got yelp');
+  console.log('getYelp: ' + place);
+
   // Auth credentials
   var auth = {
     consumerKey: "JCbcP0_u5uV1yCNrebeyYg",
@@ -54,5 +55,9 @@ var getYelp = function (place) {
   var url = OAuth.addToURL(message.action,parameterMap);
   var response = UrlFetchApp.fetch(url).getContentText();
   var responseObject = Utilities.jsonParse(response);
+
   console.log(responseObject);
+
+  // Populate api info into the observable
+  place.api(responseObject);
 };
