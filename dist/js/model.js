@@ -24,12 +24,13 @@ var ResultsModel = function(place) {
     animation: google.maps.Animation.DROP,
     position: self.location
   });
-  viewModel.markers.push(self.marker);
+  viewModel.markers.push(self.marker); // uda:no need see viewmodel
 
   // Bounces Markers
   self.toggleBounce = function() {
     self.marker.setAnimation(google.maps.Animation.BOUNCE);
-    setTimeout(function(){ self.marker.setAnimation(null); }, 750);
+    // Limits the bounce animation time
+    setTimeout(function(){ self.marker.setAnimation(null); }, 1400);
   };
 
   // Infowindow on list click. Just like the marker listener, but with ko
@@ -98,5 +99,7 @@ function callback(results, status) {
       placesResults.push(results[i]);
     }
     viewModel.createPlaces();
+  } else { // In case of errors, log them
+    console.log(error_message);
   }
 }
