@@ -17,7 +17,9 @@ This project is designed to the following Udacity [Rubric](https://www.udacity.c
 
 ##How to Run
 
-To run the app, visit [nhadinat.github.io/frontend-nanodegree-neighborhood-map](http://nhadinat.github.io/frontend-nanodegree-neighborhood-map "Diamond Jamboree: Restaurants and Cafes") on your web browser. Interact with the markers and the filter bar at the upper left corner.
+To run the app locally, open the index.html file in your browser.
+
+To run the app online, visit [nhadinat.github.io/frontend-nanodegree-neighborhood-map](http://nhadinat.github.io/frontend-nanodegree-neighborhood-map "Diamond Jamboree: Restaurants and Cafes") on your web browser. Interact with the markers and the filter bar at the upper left corner.
 
 Enjoy!
 ---

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>Diamond Jamboree: Restaurants and Cafes</title>
 
-    <link href='https://fonts.googleapis.com/css?family=Roboto:300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,700' rel='stylesheet'>
     <link rel="stylesheet" href="css/style.css">
   </head>
 
@@ -13,6 +13,7 @@
 
     <!-- Search function -->
     <div class="results">
+      <p data-bind="text: error"></p>
       <input id="filterBar" type="text" placeholder="Filter Results" data-bind="textInput: filter, click: showList">
       <input id="hide-button" type="button" value="x" data-bind="click: hideList">
       <ul data-bind="foreach: list, visible: visibleList">
@@ -30,7 +31,7 @@
     <script src="js/wiki.js"></script>
     <script src="js/model.js"></script>
 
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFRFOiufsaKBMx3jmskWF1KEiEwZCudcs&libraries=places"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFRFOiufsaKBMx3jmskWF1KEiEwZCudcs&libraries=places"></script>
 
     <script src="js/viewModel.js"></script>
 
