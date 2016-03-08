@@ -82,11 +82,6 @@ var ViewModel = function() {
   // Observable that holds error messages
   self.error = ko.observable('');
 
-
-  /* Initialize */
-
-  // Init Google Places Map
-  initialize();
 };
 
   // bind a new instance of our view model to the page

@@ -24,7 +24,7 @@ var ResultsModel = function(place) {
     animation: google.maps.Animation.DROP,
     position: self.location
   });
-  viewModel.markers.push(self.marker); // uda:no need see viewmodel
+  viewModel.markers.push(self.marker); // udacity: doesn't recommend this
 
   // Bounces Markers
   self.toggleBounce = function() {
@@ -69,7 +69,7 @@ var placesResults = [];
 var map; // google map constructor
 var infowindow; // google marker's pop-up infowindow constructor
 
-function initialize() {
+function initMap() {
   // Store location where I'll center the map
   var lollicup = new google.maps.LatLng(33.6879372, -117.8341776);
 
@@ -102,4 +102,9 @@ function callback(results, status) {
   } else { // In case of errors, log them
     console.log(error_message);
   }
+}
+
+// Google map init error handling
+function googleError(event) {
+  console.log('Google map error: ' + event);
 }
