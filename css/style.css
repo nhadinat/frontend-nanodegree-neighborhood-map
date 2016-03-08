@@ -1,9 +1,11 @@
 /* Google Map Styles */
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
 }
+
 #map {
   display: flex;
   height: 100%;
@@ -12,7 +14,7 @@ html, body {
 
 /* Theme */
 body {
-  font-family: 'Roboto', Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
   background-color: #0078a6;
   color: #222;
 }
@@ -22,12 +24,15 @@ h1, h2, h3, h4, p {
   margin: 0;
   padding: 0;
 }
+
 h1 {
   font-size: 20px;
 }
+
 h2 {
   font-size: 16px;
 }
+
 p {
   font-size: 11px;
 }
@@ -53,19 +58,23 @@ div.results {
       height: 29px;
     }
   }
+
 div.results ul {
   padding: 0;
   margin: 0;
 }
+
 div.results ul li {
   padding: 5px 10px;
   list-style: none;
   font-size: 14px;
 }
+
 div.results ul li:hover {
   color: #e65;
   cursor: pointer;
 }
+
 div.results ul li:active {
   color: #e65;
   cursor: pointer;
@@ -107,9 +116,11 @@ div.results ul li:active {
   cursor: pointer;
   transition: .2s;
 }
+
 #hide-button:hover {
   color: #777;
 }
+
 #hide-button:active {
   color: #e65;
 }

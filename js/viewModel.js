@@ -39,7 +39,7 @@ var ViewModel = function() {
   /* Input Detection */
 
   // Detect text input from view
-  self.filter = ko.observable("");
+  self.filter = ko.observable('');
 
   // Update the list with a filter function
   self.filterUpdate = function(input) {
@@ -78,6 +78,9 @@ var ViewModel = function() {
     self.currentPlace(clicked);
     console.log('current place is ' + self.currentPlace().name);
   };
+
+  // Observable that holds error messages
+  self.error = ko.observable('');
 
 
   /* Initialize */
